@@ -38,7 +38,7 @@ function findUser(request,reply){
 module.exports = {
     post: findUser,
     //or array
-    //In the array, you can pass parameters such as {prefix: "/foo", params:"/: id"} you also add your own validation scheme or event handlers such as onRequest (request,reply,done) be sure to call the done function, you can see more handlers in the official fastify/route documentation
+    //In the array, you can pass parameters such as {prefix: "/foo", params:"/: id"} you also add your own validation scheme or event handlers such as onRequest (request,reply,done) be sure to call the done function, you can see more handlers in the official fastify documentation <https://www.fastify.io/docs/latest/Routes/>
     //See the example below
     post: [
     //all options in curly brackets are optional
