@@ -54,8 +54,8 @@ module.exports = {
 ```
 ***Adding a schema***
 
-> For each route method, you can do validation.
-> Be sure to specify the method that you use for the route, otherwise the route will not be validated.
+> ***For each route method, you can do validation.
+> Be sure to specify the method that you use for the route, otherwise the route will not be validated***.
 
 * Our schema - "schemas/api/user.json"
 ```
