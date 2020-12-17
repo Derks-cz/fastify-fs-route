@@ -28,7 +28,7 @@ Create a js file in the folders with your routes.
 * routes/api/user.js
 * schemas/api/user.json
 ---
-Adding a route
+***Adding a route
 * Our route - "routes/api/user.js"
 ```
 function findUser(request,reply){
@@ -52,7 +52,7 @@ module.exports = {
     get:[{},findUser] //working
 }
 ```
-Adding a schema
+***Adding a schema
 ---
 For each route method, you can do validation
 Be sure to specify the method that you use for the route, otherwise the route will not be validated
