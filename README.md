@@ -25,8 +25,8 @@ Create a js file in the folders with your routes.
 
 > ***`IMPORTANT` if you want to connect the validation scheme to your route you need to create a json file and name it the same as your route and it should be located in the folder with the same name as in the routes***
 ---
-*routes/api/user.js
-*schemas/api/user.json
+* routes/api/user.js
+* schemas/api/user.json
 ---
 Adding a route
 Our route - "routes/user.js"
