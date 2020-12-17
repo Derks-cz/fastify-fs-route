@@ -29,7 +29,7 @@ Create a js file in the folders with your routes.
 * schemas/api/user.json
 ---
 Adding a route
-Our route - "routes/user.js"
+Our route - "routes/api/user.js"
 ```
 function findUser(request,reply){
     //you're code
@@ -55,7 +55,7 @@ module.exports = {
 Adding a schema
 For each route method, you can do validation
 Be sure to specify the method that you use for the route, otherwise the route will not be validated
-Our schema - "schemas/user.json"
+Our schema - "schemas/api/user.json"
 ```
 {
   "post": {
