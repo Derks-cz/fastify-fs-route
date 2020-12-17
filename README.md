@@ -39,7 +39,7 @@ module.exports = {
     post: findUser,
     //or array
     //In the array, you can pass parameters such as {prefix: "/foo", params:"/: id"} you also add your own validation scheme or event handlers such as onRequest        (request,reply,done) be sure to call the done function.
-You can see more handlers in the official fastify documentation 
+    //You can see more handlers in the official fastify documentation 
     //See the example below
     post: [
     //all options in curly brackets are optional
