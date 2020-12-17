@@ -25,8 +25,8 @@ Create a js file in the folders with your routes.
 
 > ***`IMPORTANT` if you want to connect the validation scheme to your route you need to create a json file and name it the same as your route and it should be located in the folder with the same name as in the routes***
 ---
-routes/api/user.js
-schemas/api/user.json
+*routes/api/user.js
+*schemas/api/user.json
 ---
 Adding a route
 Our route - "routes/user.js"
@@ -38,7 +38,7 @@ function findUser(request,reply){
 module.exports = {
     post: findUser,
     //or array
-    //In the array, you can pass parameters such as {prefix: "/foo", params:"/: id"} you also add your own validation scheme or event handlers such as onRequest        (request,reply,done) be sure to call the done function.
+    //In the array, you can pass parameters such as {prefix: "/foo", params:"/: id"} you also add your own validation scheme or event handlers such as onRequest (request,reply,done) be sure to call the done function.        
     //You can see more handlers in the official fastify documentation 
     //See the example below
     post: [
