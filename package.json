@@ -1,0 +1,23 @@
+{
+  "name": "fstify-fs-route",
+  "version": "1.0.0",
+  "description": "Makes it easier to add routes",
+  "main": "route.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Derks-cz/fstify-fs-route.git"
+  },
+  "author": "Derks-cz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Derks-cz/fstify-fs-route/issues"
+  },
+  "homepage": "https://github.com/Derks-cz/fstify-fs-route#readme",
+  "dependencies": {
+    "directory-import": "^2.2.3",
+    "lodash": "^4.17.20"
+  }
+}
