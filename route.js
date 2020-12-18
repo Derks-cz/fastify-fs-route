@@ -2,20 +2,19 @@ let imp = require("directory-import");
 let lodash = require("lodash");
 let path = require("path");
 /**
+ *@param {Object} [opt]
+ *@param {String} [opt.dirRoutes]
+ *@param {String} [opt.dirSchemas]
+ *@param {Boolean} [opt.dirAsPrefix]
  *
- * @param {String} dirRoutes
- * @param {String} dirSchemas
- * @param {Boolean} dirAsPrefix
  */
 
-function routes(dirRoutes = "./routes",dirSchemas = "./schemas", dirAsPrefix = false){
-  return function (fastify, opt, done) {
+   function routes (fastify, opt, done) {
     let schemas = imp({
-      directoryPath: dirSchemas,
+      directoryPath: path.relative(__dirname, opt.dirSchemas),
       importMethod: "sync",
     });
-
-    imp({ directoryPath: dirRoutes, importMethod: "sync" },(routeName, routePath, routeMethod) => {
+    imp({ directoryPath: path.relative(__dirname, opt.dirRoutes), importMethod: "sync" },(routeName, routePath, routeMethod) => {
         let isModule = path.extname(routePath) === ".js";
         if (!isModule) throw new Error(`${routePath} not a module. The extension must be .js`);
         if (Object.prototype != routeMethod.__proto__)throw new Error("There must be an object. Example export module = {post: foo OR post:[{options},foo}]" );
@@ -30,7 +29,7 @@ function routes(dirRoutes = "./routes",dirSchemas = "./schemas", dirAsPrefix = f
             ? schemas[`${findSchema}.json`][methodName]
             : {};
           if (lodash.isFunction(methodArgs)) {
-            if (!dirAsPrefix) {
+            if (!opt.dirAsPrefix) {
               let index = routePath.indexOf(`/${routeName}`)
               let urlWithoutPrefix = routePath.slice(index,-3)
               
@@ -44,7 +43,7 @@ function routes(dirRoutes = "./routes",dirSchemas = "./schemas", dirAsPrefix = f
             if (!options.params) options.params = "";
             if (!options.prefix) options.prefix = "";
             if (!options.schema) options.schema = lodash.isEmpty(schema) ? {} : schema.schema;
-            if (!dirAsPrefix) {
+            if (!opt.dirAsPrefix) {
               let index = routePath.indexOf(`/${routeName}`)
               let urlWithoutPrefix = routePath.slice(index,-3)
               fastify[methodName](`${options.prefix}${urlWithoutPrefix}${options.params}`, ...methodArgs);
@@ -57,5 +56,5 @@ function routes(dirRoutes = "./routes",dirSchemas = "./schemas", dirAsPrefix = f
     );
     done();
   };
-}
+
 module.exports = routes;
