@@ -1,8 +1,8 @@
 {
-  "name": "fstify-fs-route",
+  "name": "fastify-fs-route",
   "version": "1.0.0",
   "description": "Makes it easier to add routes",
-  "main": "route.js",
+  "main": "route",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
