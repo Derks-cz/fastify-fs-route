@@ -10,18 +10,18 @@ This plugin will help you add routes and validation schemes to these routes
 ```
 const fastify = require("fastify")()
 
-fastify.register(require("fastify-fs-route")("./routes","./schemas",true|false))
-//The first parameter is the path to routes
-//The second parameter is the path to schemas
+fastify.register(require("fastify-fs-route"){dirRoutes:"./routes",dirSchemas:"./schemas", folderAsPrefix: true | false, prefix:"/foo"})
+//The first parameter is the path to the directory with routes.
+//The second parameter is the path to the directory with schemas.
 //The third parameter is responsible for whether folders in the directory with routes will be used as a prefix to your paths. 
-//Example, in the "routes/api/something.js" "your link will look like "/api/something", if set to false the link will look like /something
-
+//Example, in the "routes/api/something.js" your link will look like "/api/something", if set to false the link will look like /something (default - false).
+//Prefix for all routes.
 fastify.listen(3000)
 ```
 
-## Example of adding a route and schemas
+## Example of adding a route and schema
 
-Create a js file in the folders with your routes.
+Сreate a js file in your route directory.
 ---
 ***`IMPORTANT if you want to connect the validation scheme to your route you need to create a json file and name it the same as your route and it should be located in the folder with the same name as in the routes`***
 
