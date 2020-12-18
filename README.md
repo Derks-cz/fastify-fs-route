@@ -11,11 +11,13 @@ This plugin will help you add routes and validation schemes to these routes
 const fastify = require("fastify")()
 
 fastify.register(require("fastify-fs-route"){dirRoutes:"./routes",dirSchemas:"./schemas", folderAsPrefix: true | false, prefix:"/foo"})
+
 //The first parameter is the path to the directory with routes.
 //The second parameter is the path to the directory with schemas.
 //The third parameter is responsible for whether folders in the directory with routes will be used as a prefix to your paths. 
 //Example, in the "routes/api/something.js" your link will look like "/api/something", if set to false the link will look like /something (default - false).
 //Prefix for all routes.
+
 fastify.listen(3000)
 ```
 
