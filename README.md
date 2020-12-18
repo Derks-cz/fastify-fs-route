@@ -42,13 +42,13 @@ module.exports = {
     //You can see more handlers in the official fastify documentation 
     //See the example below
     post: [
-    //all options in curly brackets are optional
     {prefix:"/foo",params:"/:id",onRequest:(req,rep,done)=>{
     console.log("request") 
     done()},
     schema:{body:{type:'object', properties:{email:{type:'string'}}}},
     findUser
     ],
+    //all options in curly brackets are optional
     get:[{},findUser] //working
 }
 ```
