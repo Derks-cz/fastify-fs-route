@@ -1,4 +1,4 @@
-# Fastify-fs-route
+# fastify-fs-route
 ---
 ## What is this? 
 This plugin will help you add routes and validation schemes to these routes
